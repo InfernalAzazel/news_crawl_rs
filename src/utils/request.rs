@@ -13,10 +13,10 @@ impl Request {
             client: reqwest::Client::new(),
         }
     }
-    pub fn post(&self, url: String) -> RequestBuilder {
+    pub fn post(&self, url: &str) -> RequestBuilder {
         self.client.post(url).headers(self.headers.clone())
     }
-    pub fn get(&self, url: String) -> RequestBuilder {
+    pub fn get(&self, url: &str) -> RequestBuilder {
         self.client.get(url).headers(self.headers.clone())
     }
 }
